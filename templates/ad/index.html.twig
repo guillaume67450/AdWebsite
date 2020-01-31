@@ -4,7 +4,9 @@
 
 {% block body %}
 <div class="text-right">
+{% if is_granted('ROLE_USER') %}
 	<button type="button" class="btn btn-dark"><a href="{{ path('ad_new') }}">Déposer une nouvelle annonce</a></button>
+{% endif %}
 </div>
 	<div class="container">
 		{% if region is defined %}
@@ -20,6 +22,7 @@
 					<div class="col-6 col-sm-4 col-md-3 my-3 my-sm-0">
 						<div class="card">
 							<div class="position-relative">
+							<a href={{ path('ad_show', {id : ad.id } ) }}>
 								<img src="{{ ad.mainPhoto }}" class="card-img-top" alt="{{ ad.title }}">
 								{#<div class="card-img-overlay d-flex justify-content-end align-items-end">
 									<button type="button" class="btn btn-light rounded-circle" data-toggle="button" aria-pressed="false" autocomplete="off">
@@ -29,6 +32,7 @@
 							</div>
 							<div class="card-body text-center">
 								<h5 class="card-title">
+									<a href={{ path('ad_show', {id : ad.id } ) }}>
 									<small> {{ ad.title }} </small>
 								</h5>
                                 <p class="card-text">
@@ -42,7 +46,7 @@
 									</a>
 								</p>
 								<p class="card-text">
-									{#<a href={{ path('home', {ad_id : ad.id } ) }}>#}
+									<a href={{ path('ad_show', {id : ad.id } ) }}>
 										<strong class="text-success">{{ ad.price }}	€</strong>
 									</a>
 								</p>

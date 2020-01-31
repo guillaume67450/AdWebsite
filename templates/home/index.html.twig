@@ -12,7 +12,9 @@
         </div>
     </div>
 <div class="container text-right">
+	{% if is_granted('ROLE_USER') %}
 	<button type="button" class="btn btn-dark"><a href="{{ path('ad_new') }}">Déposer une nouvelle annonce</a></button>
+    {% endif %}
 </div>
 
 {% if is_granted('ROLE_ADMIN') %}

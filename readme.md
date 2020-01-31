@@ -25,3 +25,5 @@ utilisateur simple : a@a.fr / mot de passe : testtest
 admin : guillaume_d_mundo@yahoo.fr / mot de passe : testtest
 
 gestion des assets et des images avec webpack encore
+
+MCD user stories et wireframe dans le dossier resource
