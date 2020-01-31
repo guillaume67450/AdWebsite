@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ad{% endblock %}
+
+{% block body %}
+    <h1>Ad</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ ad.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ ad.title }}</td>
+            </tr>
+            <tr>
+                <th>DateCreation</th>
+                <td>{{ ad.dateCreation ? ad.dateCreation|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>DateModification</th>
+                <td>{{ ad.dateModification ? ad.dateModification|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ ad.description }}</td>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <td>{{ ad.price }}</td>
+            </tr>
+            <tr>
+                <th>MainPhoto</th>
+                <td>{{ ad.mainPhoto }}</td>
+            </tr>
+            <tr>
+                <th>Photo1</th>
+                <td>{{ ad.photo1 }}</td>
+            </tr>
+            <tr>
+                <th>Photo2</th>
+                <td>{{ ad.photo2 }}</td>
+            </tr>
+            <tr>
+                <th>Photo3</th>
+                <td>{{ ad.photo3 }}</td>
+            </tr>
+            <tr>
+                <th>Photo4</th>
+                <td>{{ ad.photo4 }}</td>
+            </tr>
+            <tr>
+                <th>ZipCode</th>
+                <td>{{ ad.zipCode }}</td>
+            </tr>
+            <tr>
+                <th>City</th>
+                <td>{{ ad.city }}</td>
+            </tr>
+            <tr>
+                <th>Active</th>
+                <td>{{ ad.active ? 'Yes' : 'No' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('ad_index') }}">back to list</a>
+
+    <a href="{{ path('ad_edit', {'id': ad.id}) }}">edit</a>
+
+    {{ include('ad/_delete_form.html.twig') }}
+{% endblock %}

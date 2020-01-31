@@ -1,0 +1,48 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+    <div class="container fluid">        
+            <a class="navbar-brand" href="{{ path('home') }}">Les annonces Wild Circus</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarColor01">
+                <ul class="navbar-nav mr-auto">
+                <li class="nav-item ml-1">
+                    <a class="nav-link" href="{{ path('home') }}">Accueil</a>
+                </li>
+                {% if not app.user %}
+                <li class="nav-item ml-1">
+                    <a href="{{ path('security_login') }}" class="nav-link">
+                    Connexion
+                    </a>
+                </li>
+                <li class="nav-item ml-1">
+                    <a href="{{ path('security_registration') }}" class="nav-link">
+                    Devenir membre
+                    </a>
+                </li>
+                {% else %}
+                <li class="nav-item ml-1">
+                    <a href="{{ path('security_logout') }}" class="nav-link">
+                    Déconnexion
+                    </a>
+                </li>
+                {% endif %}
+                <li class="nav-item ml-3">
+                    <img src="{{ asset('build/circus.jpg') }}" class="bannerimg" alt="wild circus">
+                    </a>
+                </li>
+                <li class="nav-item ml-3">
+                    <img src="{{ asset('build/circus2.jpg') }}" class="bannerimg" alt="wild circus">
+                    </a>
+                </li>
+                <li class="nav-item ml-3">
+                    <img src="{{ asset('build/circus3.jpg') }}" class="bannerimg" alt="wild circus">
+                    </a>
+                </li>
+                
+                </ul>
+            </div>
+    </div>
+</nav>

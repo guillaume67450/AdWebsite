@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+
+    <!-- Main jumbotron -->
+
+    <div class="jumbotron jumbotron-fluid"> 
+        <div class="container text-center">
+            <h2 class="display-5">Le Wild Circus est fier de vous présenter ses petites annonces.</h2>
+        </div>
+    </div>
+<div class="container text-right">
+	<button type="button" class="btn btn-dark"><a href="{{ path('ad_new') }}">Déposer une nouvelle annonce</a></button>
+</div>
+
+{% if is_granted('ROLE_ADMIN') %}
+<div class="container text-right pt-2">
+	<button type="button" class="btn btn-dark"><a href="{{ path('admin') }}">Aller dans la zone d'admin</a></button>
+</div>
+{% endif %}
+
+<div class="container pb-4 mb-3">
+
+
+    <div class="row">        
+        <div class="col-xs-1 col-sm-2 col-md-3">    
+        </div>
+
+        <div class="col-xs-11 col-sm-10 col-md-9">
+            <img src="images/carte-france-region.gif" class="imageshare" alt="carte france region" usemap="#Carte-France-Region">
+
+            <map name="Carte-France-Region">
+                <area shape="RECT" coords="368,110,418,147" href="{{ path('ad_region_index', {id : 1 } ) }}" alt="Alsace">
+                <area shape="RECT" coords="312,78,363,130" href="{{ path('ad_region_index', {id : 15 } ) }}" alt="Lorraine">
+                <area shape="RECT" coords="320,143,369,206" href="{{ path('ad_region_index', {id : 10 } ) }}" alt="Franche Comte">
+                <area shape="RECT" coords="265,82,308,149" href="{{ path('ad_region_index', {id : 8 } ) }}" alt="Champagne Ardenne">
+                <area shape="RECT" coords="199,5,276,47" href="{{ path('ad_region_index', {id : 17 } ) }}" alt="Nord pas de Calais">
+                <area shape="RECT" coords="203,52,263,93" href="{{ path('ad_region_index', {id : 19 } ) }}" alt="Picardie">
+                <area shape="RECT" coords="152,42,199,90" href="{{ path('ad_region_index', {id : 11 } ) }}" alt="Haute Normandie">
+                <area shape="RECT" coords="99,85,152,122" href="{{ path('ad_region_index', {id : 4 } ) }}" alt="Basse Normandie">
+                <area shape="RECT" coords="11,105,91,159" href="{{ path('ad_region_index', {id : 6 } ) }}" alt="Bretagne">
+                <area shape="RECT" coords="107,133,150,188" href="{{ path('ad_region_index', {id : 18 } ) }}" alt="Pays de la Loire">
+                <area shape="RECT" coords="117,206,170,254" href="{{ path('ad_region_index', {id : 20 } ) }}" alt="Poitou Charentes">
+                <area shape="RECT" coords="177,223,227,272" href="{{ path('ad_region_index', {id : 14 } ) }}" alt="Limousin">
+                <area shape="RECT" coords="177,132,223,210" href="{{ path('ad_region_index', {id : 7 } ) }}" alt="Centre">
+                <area shape="RECT" coords="204,96,257,132" href="{{ path('ad_region_index', {id : 12 } ) }}" alt="Ile de France">
+                <area shape="RECT" coords="243,151,313,208" href="{{ path('ad_region_index', {id : 5 } ) }}" alt="Bourgogne">
+                <area shape="RECT" coords="285,230,372,282" href="{{ path('ad_region_index', {id : 22 } ) }}" alt="Rhone Alpes">
+                <area shape="RECT" coords="229,228,276,294" href="{{ path('ad_region_index', {id : 3 } ) }}" alt="Auvergne">
+                <area shape="RECT" coords="303,315,398,365" href="{{ path('ad_region_index', {id : 21 } ) }}" alt="Provence">
+                <area shape="RECT" coords="171,311,228,357" href="{{ path('ad_region_index', {id : 16 } ) }}" alt="Midi Pyrenees">
+                <area shape="RECT" coords="112,271,168,328" href="{{ path('ad_region_index', {id : 2 } ) }}" alt="Aquitaine">
+                <area shape="RECT" coords="231,337,293,387" href="{{ path('ad_region_index', {id : 13 } ) }}" alt="Languedoc Rousillon">
+                <area shape="RECT" coords="371,383,414,450" href="{{ path('ad_region_index', {id : 9 } ) }}" alt="Corse">
+            </map>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
