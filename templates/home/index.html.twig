@@ -11,7 +11,7 @@
             <h2 class="display-5">Le Wild Circus est fier de vous présenter ses petites annonces.</h2>
         </div>
     </div>
-<div class="container text-right">
+<div class="container text-right pb-4">
 	{% if is_granted('ROLE_USER') %}
 	<button type="button" class="btn btn-dark"><a href="{{ path('ad_new') }}">Déposer une nouvelle annonce</a></button>
     {% endif %}

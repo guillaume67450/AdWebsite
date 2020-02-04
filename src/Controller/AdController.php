@@ -30,19 +30,6 @@ class AdController extends AbstractController
         ]);
     }
 
-
-    /**
-     * @Route("/region/{id}/category/{cat}", name="ad_region_cat_index", methods={"GET"})
-     */
-    public function RegionCatAdsIndex(AdRepository $adRepository, RegionRepository $regionRepository, CategoryRepository $categoryRepository, $id, $cat): Response
-    {
-        return $this->render('ad/index.html.twig', [
-            'ads' => $adRepository->findByRegion($id),
-            'region' => $regionRepository->findOneById($id),
-            'category' => $categoryRepository->findOneById($cat)
-        ]);
-    }
-
     /**
      * @Route("/region/{id}", name="ad_region_index", methods={"GET"})
      */

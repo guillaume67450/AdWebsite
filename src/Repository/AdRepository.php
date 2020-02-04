@@ -3,8 +3,11 @@
 namespace App\Repository;
 
 use App\Entity\Ad;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use App\Entity\Region;
+use App\Entity\Category;
+use Doctrine\ORM\Query\Expr\Join;
 use Doctrine\Common\Persistence\ManagerRegistry;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
 /**
  * @method Ad|null find($id, $lockMode = null, $lockVersion = null)
@@ -46,5 +49,5 @@ class AdRepository extends ServiceEntityRepository
             ->getOneOrNullResult()
         ;
     }
-    */
+    */    
 }

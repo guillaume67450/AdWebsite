@@ -33,15 +33,13 @@
                     <img src="{{ asset('build/circus.jpg') }}" class="bannerimg" alt="wild circus">
                     </a>
                 </li>
-                <li class="nav-item ml-3">
-                    <img src="{{ asset('build/circus2.jpg') }}" class="bannerimg" alt="wild circus">
+                {% if app.user %}
+                <li class="nav-item ml-1">
+                    <a href="{{ path('user_edit', {id : user.id } ) }}" class="nav-link">
+                    <i class="fa fa-lock" aria-hidden="true">Modification du profil</i>
                     </a>
                 </li>
-                <li class="nav-item ml-3">
-                    <img src="{{ asset('build/circus3.jpg') }}" class="bannerimg" alt="wild circus">
-                    </a>
-                </li>
-                
+                {% endif %}                
                 </ul>
             </div>
     </div>
